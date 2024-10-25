@@ -1,1 +1,2 @@
-<meta http-equiv="refresh" content="3;url=http://www.google.com/" />
+|[Enter](https://dtr1567.github.io/Games/ImageEditor.html)|
+|---|
