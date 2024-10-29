@@ -1,144 +1,169 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="google" value="notranslate"><meta name="description" content="TurboWarp is a Scratch mod with a compiler to run projects faster, dark mode for your eyes, a bunch of addons to improve the editor, and more."/><title>TurboWarp - Run Scratch projects faster</title><link rel="apple-touch-icon" href="/images/apple-touch-icon.png"><link rel="manifest" href="/manifest.webmanifest"><style>.splash-screen {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      }
-      .splash-screen[hidden] {
-        display: none;
-      }
-      .splash-screen[data-theme="dark"] {
-        background-color: #333;
-        color: white;
-      }
-      .splash-screen > * {
-        max-width: 80%;
-      }
-      .splash-spinner:after {
-        content: " ";
-        display: block;
-        width: 64px;
-        height: 64px;
-        border-radius: 50%;
-        border: 6px solid;
-        border-color: currentColor transparent currentColor transparent;
-        animation: splash-spinner 1.2s linear infinite;
-      }
-      @keyframes splash-spinner {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-      }
-      .splash-error-title {
-        font-weight: bold;
-      }
-      .splash-error-title a {
-        color: inherit;
-      }
-      .splash-errors {
-        font-family: monospace;
-      }
-      .splash-error-list {
-        white-space: pre-wrap;
-      }
-      .splash-reset {
-        color: inherit;
-        background: none;
-        padding: 0;
-        margin: 0;
-        border: none;
-        text-decoration: underline;
-        cursor: pointer;
-      }
-      .splash-reset:disabled {
-        opacity: 0.8;
-      }</style></head><body><noscript><div class="splash-screen"><div><h1>TurboWarp requires JavaScript</h1><p>Consider using <a href="https://desktop.turbowarp.org/">TurboWarp Desktop</a> if you are afraid of remote JavaScript.</p></div></div></noscript><div class="splash-screen spash-waiting-for-js" hidden><div class="splash-spinner"></div><div class="splash-error-title" hidden>Something went wrong. <a href="https://scratch.mit.edu/users/GarboMuffin/#comments" target="_blank" rel="noreferrer">Please report</a> with the information below.</div><div class="splash-errors" hidden></div><button class="splash-reset" hidden>Click here to reset caches (can fix some errors)</button></div><script>(function () {
-        'use strict';
+<!DOCTYPE html>
+<html lang="en">
+  <head>
 
-        var theme = '';
-        var accent = '#ff4c4c';
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="At SweetRBX.com you can easily earn hundreds of ROBUX for free, by completing very easy tasks.">
+    <meta name="author" content="Python">
+  
+    <meta property="og:title" content="SweetRBX - Earn free ROBUX for completing easy quizzes, apps, and more!">
+    <meta property="og:description" content="Earn Robux by completing quizzes, downloading games on your mobile device and watching videos!">
+    <meta property="og:url" content="https://sweetrbx.com">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel = "stylesheet" href="./css/login.css">
+    <link rel =  "stylesheet" href="./css/header.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap" rel="stylesheet">
+    
+     <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+    <script src="https://kit.fontawesome.com/2d7a97658d.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="./img/favicon.png">
 
-        try {
-          var themeSetting = localStorage.getItem('tw:theme');
-        } catch (e) {
-          // ignore
-        }
-        if (themeSetting === 'light') {
-          theme = 'light';
-        } else if (themeSetting === 'dark') {
-          theme = 'dark';
-        } else if (themeSetting) {
-          try {
-            var parsed = JSON.parse(themeSetting);
-            if (parsed.accent === 'purple') {
-              accent = '#855cd6';
-            } else if (parsed.accent === 'blue') {
-              accent = '#4c97ff';
-            }
-            if (parsed.gui === 'dark' || parsed.gui === 'light') {
-              theme = parsed.gui;
-            }
-          } catch (e) {
-            // ignore
-          }
-        }
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167834764-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-        if (!theme) {
-          theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        }
+  gtag('config', 'UA-167834764-1');
+</script>
 
-        var splash = document.querySelector('.spash-waiting-for-js');
-        splash.setAttribute('data-theme', theme);
-        if (theme !== 'dark') {
+
+    <title>SweetRBX - Earn Free Robux!</title>
+  </head>
+  <body>
+                      
+  <div class = "logo-big">
+      <img src = "./img/login/sweetrbxlogo2.png" class = "logo-img">
+      <a href = "#login" class = "join-link animate__animated animate__bounce animate__infinite	infinite">JOIN US!</a>
+  </div>
+    
+   <div class = "parent">
+       <div class = "about-us-box">
+
+             
+           <a href="#" class="btn btn-primary btn-lg disabled panel panel-1" tabindex="-1" role="button" aria-disabled="true">
+                <span class="panel-txt">
+                Login with <b>just</b> your
+                <b>RBLX</b> Username! 
+                <br></span>
+                <img src = "./img/login/login-icon.png" class = "icon-img">
+           </a>
+             
+           <a href="#" class="btn btn-primary btn-lg disabled panel panel-2" tabindex="-1" role="button" aria-disabled="true">
+                <span class="panel-txt"> 
+                   Complete <b>quick</b> and 
+                   <b>easy</b> surveys, 
+                   for <b>RBX!</b>
+                    <br>
+                </span>
+                <img src = "./img/login/survey-icon.png" class = "icon-img">
+        </a>
+             
+           <a href="#" class="btn btn-primary btn-lg disabled panel panel-3" tabindex="-1" role="button" aria-disabled="true">
+                <span class="panel-txt">
+                Withdraw <b>RBX</b> straight to your 
+                   <b>RBLX</b> account!
+                    <br>
+                </span>
+              <img src="./img/login/withdraw-icon.png" class = "icon-img"> 
+          </a>
           
-            splash.style.color = accent;
-          
-        }
-        splash.hidden = false;
+       </div>
+    
+    
+    <div class = "stats-box">
+         <div class="container">
+             <div class="row">
+                  <div class="col-sm  stats users">
+                      <div class = "stats-txt"><i class="fas icon fa-users"></i>Users</div>
+                      <span id="usersCount">0</span>
+                  </div>
+                
+                 <div class="col-sm  stats rbx">
+                     <div class = "stats-txt"><i class="fas icon fa-hand-holding-usd"></i>RBX Given</div>
+                     <span id="robuxWithdrawn">0</span>
+                </div>
+                
+                <div class="col-sm  stats offers">
+                       <div class = "stats-txt"><i class="icon fas fa-clipboard"></i>Offers Completed</div>
+                       <span id="offersCompleted">0</span> 
+                </div>
 
-        var splashErrorTitle = document.querySelector('.splash-error-title');
-        var splashError = document.querySelector('.splash-errors');
-        var splashReset = document.querySelector('.splash-reset');
+              </div>
+        </div>
+    </div>
+    
+    
+    
+            
+     <div class = "withdraw-box login-box" id="login">
+        <div class = "login-heading"> Link <span class = "login-word">Account</span></div>
+        <div class = "promise">We will <b> NEVER </b> ask for your <b>RBLX PASSWORD!</b></div>
 
-        var totalErrors = 0;
-        window.onerror = function (event, source, line, col, err) {
-          if (++totalErrors > 5) return; // dont bother logging more
-          splashErrorTitle.hidden = splashError.hidden = splashReset.hidden = false;
-          var el = document.createElement('div');
-          el.textContent = 'Error (splash) in ' + source + ' (' + line + ':' + col + '): ' + err;
-          splashError.appendChild(el);
-        };
+        
+        <form id="usernameLoginForm">
 
-        splashReset.onclick = function () {
-          splashReset.disabled = true;
-          function hardRefresh() {
-            var search = location.search.replace(/[?&]nocache=\d+/, '');
-            location.replace(location.pathname + search + (search ? '&' : '?') + 'nocache=' + Math.floor(Math.random() * 100000));
-          }
-          if ('serviceWorker' in navigator) {
-            setTimeout(hardRefresh, 5000);
-            navigator.serviceWorker.getRegistration("/")
-              .then(function(registration) {
-                if (registration) {
-                  return registration.unregister();
-                }
-              })
-              .then(hardRefresh)
-              .catch(hardRefresh);
-          } else {
-            hardRefresh();
-          }
-        };
+          <div class="g-recaptcha"
+              data-sitekey="6LfIwe8UAAAAALCVo4ZHILg7wqfHLA9kf2d7_on_"
+              data-callback="onSubmit"
+              data-size="invisible">
+          </div>
 
-        window.SplashEnd = () => {
-          splash.hidden = true;
-          window.onerror = null;
-        };
-      })();</script><div id="app"></div><script src="/js/pentapod/vendors~addon-settings~credits~editor~embed~fullscreen~player.6cad3d89928857634811.js"></script><script src="/js/pentapod/vendors~editor~embed~fullscreen~player.7a5a1df87d0f937ad022.js"></script><script src="/js/pentapod/addon-settings~addons~editor~fullscreen~player.2e9e1e83237d0d6486f6.js"></script><script src="/js/pentapod/addon-settings~editor~embed~fullscreen~player.dc61d0d809a808861a4d.js"></script><script src="/js/pentapod/player.21094c0ffbcc4072bd09.js"></script></body></html>
+          <input type="text" placeholder = "RBLX Username" class="form-control" id="usernameInput" class = "rbx-txt" aria-describedby="emailHelp">
+          <div id="submitButtonHolder"></div>
+
+        </form>
+
+
+    </div>
+
+      <script>
+        const totalUsersCount = 1192885;
+        const totalRobuxWithdrawn = 15301209.374999503;
+        const totalOffersCompleted = 1196282;
+    </script>
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="./dist/login.js"></script>
+
+    <div class = "footer">
+  <div class = "decloration">"The <b>sweetest</b> of robux, for the <b>sweetest</b> of people."<br>
+  <b>SweetRbx</b>
+  </div>
+
+  
+
+
+  <!-- <div class = "btn-footer discord">
+      <a href = "https://discord.gg/9TYuFdh" target="_blank" class = "link">
+          <i class="fab fa-discord icon"></i>DISCORD
+      </a>
+   </div>
+   <div class = "btn-footer youtube">
+      <a href = "https://www.youtube.com/channel/UCcSt6BfSOCUXEs1L7I4iBDw?view_as=subscriber" target="_blank" class = "link">
+          <i class="fab fa-youtube icon"></i>YOUTUBE
+      </a>
+  </div>
+   
+  <div class = "btn-footer twitter">
+      <a href = "https://twitter.com/Sweetrbx/" target="_blank" class = "link">
+          <i class="fab fa-twitter icon"></i>TWITTER
+      </a>
+  </div>
+  <div class = "btn-footer instagram">
+      <a href = "https://www.instagram.com/sweetrbx/" target="_blank" class = "link">
+          <i class="fab fa-instagram icon"></i>INSTAGRAM
+      </a>
+  </div> -->
+  
+</div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>
