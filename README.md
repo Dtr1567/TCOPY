@@ -1,3 +1,3 @@
-|[Enter](https://dtr1567.github.io/Games/ImageEditor.html)|
+|My Python MOD v1|
 |----|
-|[Join](https://dtr1567.github.io/Games)|
+|[Download](https://dtr1567.github.io/TCOPY/main.py)|
